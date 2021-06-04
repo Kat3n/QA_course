@@ -1,0 +1,34 @@
+. Посмотреть где я pwd
+2. Создать папку mkdir folder
+3. Зайти в папку cd folder
+4. Создать три папки mkdir -p f_1 f_2 f_3
+5. Зайти в любую папку cd f_3
+6. Создать пять файлов touch file1.txt file2.txt file3.txt file1.json file2.json
+7. Создать тир папки в папке mkdir -p test1/test2/test3
+8. Вывести список содержимого папки  ls -la
+9. Открыть файл nano file1.txt
+10. Сохранить и выйти ctrl+x y enter
+11. Выйти из папки на уровень выше cd ..
+12. Переместить файлы в другую папку mv file1.json file2.json /home/adduser/folder/f_3
+13. Скопировать файлы в другую папку cp file1.txt file2.txt /home/adduser/folder/f_2
+14. Найти файл по имени find . -name "file*"
+15. Посмотреть содержимое в реальном времени grep -r text
+16. Вывести несколько первых строк из текстового файла head -2 /home/adduser/folder/f_2/file1.txt
+17. Вывести несколько последних строк из текстового файла tail -2 file3.txt
+18. Посмотреть содержимое длинного файла less /home/adduser/folder/f_2/file2.txt
+19. Вывести дату и время date
+20. Отправить запрос на сервер curl https://api.quarantine.country/api/v1/regions
+21. Написать скрипт который автоматически выполнит пункты 3,4,5,6,7,8,12
+#!bin/bash
+cd script
+mkdir -p folder1 folder2 folder3
+cd folder1
+touch 1.txt 2.txt 3.txt 4.txt 5.txt
+mkdir - f1/f2/f3
+ls -la
+mv 1.txt 2.txt /home/adduser/script/folder2
+Делаем файл выполнимым chmod u+x file_script.txt
+Выполняем ./file_script.txt
+
+
+
