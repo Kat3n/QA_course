@@ -1,0 +1,578 @@
+https://docs.google.com/document/d/1ICUP7s9Z-pF7sGxtms6lQMDxISBEDb2mpsS29dLpIa8/edit
+
+Bug N 1
+Title: Форма “IT Career Today web form” проходит валидацию при заполнении формы  с пропуском обязательных полей.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Name”:”Kate”
+2 Заполнить поле “Surname”:”Paliakova”
+3  Нажать кнопку "Submit"
+ER: Форма “IT Career Today web form” не проходит валидацию.Незаполненные поля подсвечиваются. Появляется сообщение об ошибке “Заполните обязательные поля”.
+AR:  Форма “IT Career Today web form”  проходит валидацию. Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+Bug N 2
+Title: Все обязательные к заполнению поля ввода не отмечены звездочкой в форме  “IT Career Today web form”.
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+
+Steps:
+1 Смотреть форму
+
+ER: Обязательные поля ввода отмечены звездочкой.
+AR: Обязательные поля ввода не отмечены звездочкой.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+Bug N 3
+
+Title: Название формы “IT Career Today web form” отображается без пробелов
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Смотреть название формы
+
+ER: Название формы “IT Career Today web form”.
+AR: Название формы "ITCareerToday web form".
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 4
+Title: Разные спец. символы в плейсхолдере в полях ввода формы “IT Career Today web form”
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Смотреть плейсхолдер полей ввода
+
+ER: Одинаковые спец. символы в плейсхолдере в полях ввода.
+AR: Разные спец. символы в плейсхолдере в полях ввода
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 5
+Title: Орфографическая ошибка в названии лейбла "Surname" в форме “IT Career Today web form”
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Смотреть лейбл "Surname"
+ER:  Названии лейбла "Surname"
+AR:  Названии лейбла "Surame"
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 6
+Title: Ошибка в сообщении об ошибке в форме “IT Career Today web form”
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Name”:”Kate”
+2 Заполнить поле “Surname”:”Paliakova”
+3  Нажать кнопку "Submit"
+4 Смотреть сообщение об ошибке
+
+ER: Сообщение об ошибке “Error: fill in required fields.”
+AR:  Сообщение об ошибке “Error: Error: All Fields are Required”
+
+Attachments:
+
+
+Bug N 7
+Title: Неотцентрировано название кнопки "Submit" в форме “IT Career Today web form”
+Precondition:  http://itcareer.pythonanywhere.com/
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Смотреть название кнопки "Submit"
+
+ER: Название "Submit" располагается в центре кнопки
+AR: Название "Submit" располагается не в центре кнопки
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 8
+Title: Поле “Name” не проходит валидацию при вводе минимально допустимого количества символов.
+Precondition:  зайти на сайт http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Surname”:”Paliakova”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Name”:”K”
+2  Нажать кнопку "Submit"
+
+ER: Поле проходит валидацию.Пользователь зарегистрирован. Появляется сообщение об успешной регистрации.
+AR:  Поле не проходит валидацию. Пользователь не зарегистрирован.  Появляется сообщение об ошибке.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+Bug N 9
+Title: Поле “Name” не проходит валидацию при вводе максимально  допустимого количества символов.
+Precondition:  зайти на сайт http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Surname”:”Paliakova”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Name” 128 символов
+2  Нажать кнопку "Submit"
+ER: Поле проходит валидацию.Пользователь зарегистрирован. Появляется сообщение об успешной регистрации.
+AR:  Поле не проходит валидацию. Пользователь не зарегистрирован.  Появляется сообщение об ошибке.
+
+
+Attachments:
+
+
+
+
+
+
+
+
+Bug N 10
+Title: Поле “Name”  проходит валидацию при вводе при вводе только допустимых  спецсимволов.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Surname”:”Paliakova”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Name” :“!!!!”
+2  Нажать кнопку "Submit"
+ER: Поле не проходит валидацию. Появляется сообщение об ошибке "Поле должно содержать буквы латинского алфавита"
+AR:  Поле проходит валидацию.Пользователь зарегистрирован. Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+Bug N 11
+Title: Поле “Name”  проходит валидацию при заполнении символами  кириллицы в  форме “IT Career Today web form”
+Precondition: зайти на сайт http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Surname”:”Paliakova”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Name” :“Катя”
+2  Нажать кнопку "Submit"
+ER: Поле не проходит валидацию. Появляется сообщение об ошибке "Поле должно содержать буквы латинского алфавита"
+AR: Поле проходит валидацию.Пользователь зарегистрирован. Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 12
+Title: Пользователь  зарегистрирован при вводе больше максимально допустимого количества символов в поле “Surname”
+Precondition:  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Surname” 129 символов
+2  Нажать кнопку "Submit"
+ER: Пользователь не зарегистрирован.
+AR: Пользователь  зарегистрирован.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 13
+Title: Пользователь зарегистрирован при вводе только допустимых спец.символов в поле “Surname”
+Precondition:  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями“Name”:”Kate”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Surname” :“!!!!”
+2  Нажать кнопку "Submit"
+ER: Пользователь не зарегистрирован.
+AR:  Пользователь зарегистрирован.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 14
+Title: Пользователь зарегистрирован при заполнении поля “Surname” символами  кириллицы
+Precondition:  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Name”:”Kate”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Surname” :“Полякова”
+2  Нажать кнопку "Submit"
+ER: Пользователь не зарегистрирован.
+AR:  Пользователь зарегистрирован.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+
+
+
+Bug N 15
+Title:Surname пользователя выходит за пределы поля в сообщении об успешной регистрации при введении от 52
+Precondition:  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Surname” от 52 или больше символов
+2  Нажать кнопку "Submit"
+ER: В сообщении об успешной регистрации Surname пользователя не выходит за пределы поля
+AR:В сообщении об успешной регистрации Surname пользователя  выходит за пределы поля
+
+Attachments:
+
+
+
+
+
+
+
+Bug N 16
+Title: Поле “Password” в форме “IT Career Today web form” проходит валидацию при заполнении с использованием запрещенного спецсимвола “пробел”.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Password”:”1Ka te!”
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" может содержать только символы: @ ? ! , . :"
+AR: Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+Bug N 17
+Title: Поле“Password” в форме “IT Career Today web form” проходит валидацию при заполнении с использованием запрещенных символов кириллицы.
+Precondition: зайти на сайт http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Password”:”1Катя!”
+2 Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" может содержать только буквы латинского алфавита".
+AR:Поле “Password”  проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+Bug N 18
+Title: Поле“Password” в форме “IT Career Today web form” проходит валидацию при заполнении с использованием запрещенных спецсимволов
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Заполнить поле “Password”:”1Kate/!”
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" может содержать только символы:@ ? ! , . :"
+AR:  Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+Bug N 19
+Title: Поле“Password” в форме “IT Career Today web form” проходит валидацию, когда поле не заполняется.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Поле “Password” не заполнять
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Заполните обязательные поля"
+AR:  Поле “Password”  проходит валидацию.Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+Bug N 20
+Title: Поле“Password” в форме “IT Career Today web form” проходит валидацию при заполнении меньше минимально допустимого количества символов.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Поле “Password”:”1Ka!”
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Минимальная длина поля – 5 символов"
+AR:  Поле “Password”  проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+Bug N 21
+Title: Поле“Password” в форме “IT Career Today web form” проходит валидацию при заполнении больше максимально допустимого количества символов.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Ввести в поле “Password” 33 символа ( должно содержать одну заглавную букву, один спецсимвол: @ ? ! , . :  и число )
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке ""Максимальная длина поля – 32 символа"
+AR: Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+Bug N 22
+Title:  Поле “Password” в форме “IT Career Today web form” проходит валидацию при заполнении с пропуском одной обязательной заглавной буквы.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Заполнить поле “Password”:”1kate!”
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" должно содержать одну заглавную букву, один символ и число"
+AR: Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+Bug N 23
+Title:  Поле “Password” в форме “IT Career Today web form” проходит валидацию при заполнении поля с пропуском одной обязательной цифры.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Заполнить поле “Password”:”Kate!?”
+2  Нажать кнопку "Submit"
+ER: Поле  “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" должно содержать одну заглавную букву, один символ и число"
+AR: Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+Bug N 24
+Title:  Поле “Password” в форме “IT Career Today web form” проходит валидацию при заполнении поля  с пропуском одного обязательного спецсимвола  в форме.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”. ”Email”:”kate@mail.ru”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Заполнить поле “Password”:”1Kate2”
+2  Нажать кнопку "Submit"
+ER: Поле “Password” не проходит валидацию. Появляется сообщение об ошибке "Поле "Password" должно содержать одну заглавную букву, один символ и число"
+AR: Поле “Password” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+Bug N 25
+Title: Поле ”Email” в форме “IT Career Today web form” проходит валидацию при заполнении поля без спецсимвола "@".
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Заполнить поле ”Email”:”katemail.ru”
+2  Нажать кнопку "Submit"
+ER:Поле  ”Email” не проходит валидацию. Поле подсвечивается, появляется сообщение об ошибке "Введите настоящий адрес электронной почты".
+AR: Поле  ”Email” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+Bug N 26
+Title: Поле ”Email” в форме “IT Career Today web form” проходит валидацию при заполнении  поля меньше  минимально допустимого количества символов.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Заполнить поле ”Email”:”k@mail.ru”
+2  Нажать кнопку "Submit"
+ER:Поле ”Email”не проходит валидацию. Поле подсвечивается, появляется сообщение об ошибке "Введите настоящий адрес электронной почты"
+AR:  Поле  ”Email” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+Bug N 27
+Title:Поле ”Email” в форме “IT Career Today web form” проходит валидацию при заполнении поля  больше максимально допустимого количества символов.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями: “Name”:”Kate”,  “Surname”:”Paliakova”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1  Ввести в поле ”Email” 257 символов
+2  Нажать кнопку "Submit"
+ER:Поле ”Email” не проходит валидацию.  Поле подсвечивается, появляется сообщение об ошибке "Введите настоящий адрес электронной почты"
+AR: Поле  ”Email” проходит валидацию. Пользователь зарегистрирован.Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
+
+
+
+
+
+Bug N 28
+Title: Поле “Name” в форме “IT Career Today web form” проходит валидацию при заполнении поля только пробелами.
+Precondition: зайти на сайт  http://itcareer.pythonanywhere.com/
+Остальные поля заполнены валидными значениями:“Surname”:”Paliakova”,  ”Email”:”kate@mail.ru”, “Password”:”1Kate!”
+Environment: OS: Windows 10; Browser:Google Chrome версия 91.0.4472.106
+Steps:
+1 Ввести в поле “Name” пять пробелов
+2  Нажать кнопку "Submit"
+ER: Поле не проходит валидацию. Появляется сообщение об ошибке "Поле должно содержать буквы латинского алфавита"
+AR:  Поле проходит валидацию.Пользователь зарегистрирован. Появляется сообщение об успешной регистрации.
+
+Attachments:
+
+
+
+
