@@ -1,0 +1,40 @@
+/*статус код*/
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+/* структура json*/
+const schema = {
+  "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer"
+    },
+    "daily_food": {
+      "type": "number"
+    },
+    "daily_sleep": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "age",
+    "daily_food",
+    "daily_sleep",
+    "name"
+  ]
+}
+pm.test("Schema json", () => {
+pm.response.to.have.jsonSchema(schema);
+});
+
+/*правильности результата перемножения на коэффициент*/
+pm.test("weight", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.daily_food).to.eql(request.data.weight*0.012),
+     pm.expect(jsonData.daily_sleep).to.eql(request.data.weight*2.5)
+});
+
