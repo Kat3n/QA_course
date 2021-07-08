@@ -1,0 +1,76 @@
+/*Статус код 200*/
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+
+/*проверка структуры json в ответе*/
+const schema = {
+  "type": "object",
+  "properties": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "u_age": {
+          "type": "integer"
+        },
+        "u_name": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "u_salary_1_5_year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "u_age",
+        "u_name",
+        "u_salary_1_5_year"
+      ]
+    },
+    "qa_salary_after_12_months": {
+      "type": "number"
+    },
+    "qa_salary_after_6_months": {
+      "type": "integer"
+    },
+    "start_qa_salary": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "person",
+    "qa_salary_after_12_months",
+    "qa_salary_after_6_months",
+    "start_qa_salary"
+  ]
+}
+ 
+pm.test("Validate schema", () => {
+pm.response.to.have.jsonSchema(schema);
+});
+
+
+/*проверке правильности результата перемножения на коэффициент*/
+pm.test("Your salary", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.qa_salary_after_6_months).to.eql(jsonData.start_qa_salary * 2),
+    pm.expect(jsonData.qa_salary_after_12_months).to.eql(jsonData.start_qa_salary * 2.9),
+    pm.expect(jsonData.person.u_salary_1_5_year).to.eql(jsonData.start_qa_salary * 4);
+});
+
+
+/*Достать значение из поля 'u_salary_1.5_year' */
+let jsonData = JSON.parse(responseBody);
+postman.setEnvironmentVariable("salary1.5", jsonData.person.u_salary_1_5_year);
