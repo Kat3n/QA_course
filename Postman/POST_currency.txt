@@ -1,0 +1,9 @@
+ const jsonData = pm.response.json();
+ console.log(jsonData.length);
+ 
+ var i = jsonData.length
+ function getRandomInt(i){
+     return Math.floor(Math.random()*i);
+ }
+ pm.environment.set("curr_id",jsonData[getRandomInt(i)].Cur_ID);
+console.log(jsonData[getRandomInt(i)].Cur_ID)
