@@ -1,0 +1,3 @@
+/*достаем токен и передаем в переменную*/ 
+let jsonData = JSON.parse(responseBody);
+postman.setEnvironmentVariable("token", jsonData.token);
