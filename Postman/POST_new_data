@@ -1,0 +1,68 @@
+/*Статус код 200*/
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+
+/* Проверка структуры json в ответе*/
+const schema = {
+"type": "object",
+  "properties": {
+    "age": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "age",
+    "name",
+    "salary"
+  ]
+
+}
+pm.test("Validate schema", () => {
+pm.response.to.have.jsonSchema(schema);
+});
+
+/*проверка правильности результата перемножения на коэффициент*/
+pm.test("Check salary", function () {
+    let jsonData = pm.response.json();
+   pm.expect(parseInt(jsonData.salary[1])).to.eql(jsonData.salary[0] * 2),
+   pm.expect(parseInt(jsonData.salary[2])).to.eql(jsonData.salary[0] * 3)
+});
+
+
+
+
+/* проверить, что 2-й элемент массива salary больше 1-го и 0-го*/
+pm.test("Salary[]", function () {
+    let jsonData = pm.response.json();
+pm.expect(parseInt(jsonData.salary[2])).to.be.above(parseInt(jsonData.salary[1])),
+pm.expect(parseInt(jsonData.salary[2])).to.be.above(parseInt(jsonData.salary[0]))
+});
+
+
+/*Достать значение из поля 'name' */
+let jsonData = JSON.parse(responseBody);
+postman.setEnvironmentVariable("name", jsonData.name);
+postman.setEnvironmentVariable("age", jsonData.age);
+
+console.log(jsonData.age);
+
