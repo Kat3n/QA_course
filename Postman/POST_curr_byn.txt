@@ -1,0 +1,13 @@
+/*в работе*/
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+var schema = {
+    "items": {
+        "type": "boolean"
+    }
+}
+pm.test("Validate schema", () => {
+pm.response.to.have.jsonSchema(schema);
+});
