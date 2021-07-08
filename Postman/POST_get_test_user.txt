@@ -1,0 +1,81 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+/*структура json*/
+  const schema = {
+  "type": "object",
+  "type": "object",
+  "properties": {
+    "age": {
+      "type": "string"
+    },
+    "family": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          ]
+        },
+        "u_salary_1_5_year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "children",
+        "u_salary_1_5_year"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "age",
+    "family",
+    "name",
+    "salary"
+  ]
+}
+pm.test("Validate schema", () => {
+pm.response.to.have.jsonSchema(schema);
+});
+
+
+/*значение=переменной*/
+var jsonData = JSON.parse(responseBody);
+tests["Correct name"] = jsonData.name == environment.name;
+
+
+
+pm.test("age", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.age).to.eql(request.data.age);
+});
