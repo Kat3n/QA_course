@@ -33,4 +33,40 @@ INNER JOIN Laptop
 ON Product.model=Laptop.model
 WHERE hd>=10;
 =======
+Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+---
+SELECT Product.model, price
+FROM Product 
+INNER JOIN PC ON Product.model=PC.model
+WHERE maker='B'
+UNION
+SELECT Product.model, price
+FROM Product 
+INNER JOIN Laptop ON Product.model=Laptop.model
+WHERE maker='B'
+UNION
+SELECT Product.model, price
+FROM Product 
+INNER JOIN Printer ON Product.model=Printer.model
+WHERE maker='B';
+=======
+Найдите производителей ПК с процессором не менее 450 Мгц. Вывести: Maker
+---
+SELECT DISTINCT maker FROM Product
+INNER JOIN PC
+ON Product.model=PC.model
+WHERE speed>=450;
+=======
+Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+---
+SELECT Product.model, Printer.price
+FROM Product
+INNER JOIN Printer
+ON Product.model=Printer.model
+WHERE price=(SELECT MAX(price) FROM Printer);
+=======
+Найдите среднюю скорость ПК.
+---
+SELECT AVG(speed) FROM PC;
+=======
 
